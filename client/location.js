@@ -1,6 +1,9 @@
+
 Meteor.startup(function() {
-  navigator.geolocation.getCurrentPosition(success);
+  navigator.geolocation.getCurrentPosition(onSuccess);
 });
-success = function(postion){
-	Session.set('location', {latitude:position.coords.latitude,longitude:position.coords.longitude});
-}
+
+success = function(position) {
+  Session.set('location', {latitude: position.coords.latitude, longitude: position.coords.longitude});
+  
+};
